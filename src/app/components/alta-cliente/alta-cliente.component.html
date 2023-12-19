@@ -11,6 +11,6 @@
     <option *ngFor="let grupo of clienteService.getGrupos()" [value]="grupo.id">{{grupo.nombre}}</option>
   </select>
   <br>
-  <button >Guardar</button>
+  <button (click)="saveCustomer()">Guardar</button>
 </div>
 

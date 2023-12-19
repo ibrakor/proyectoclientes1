@@ -1,20 +1,27 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ClientesService} from "../../services/clientes.service";
 import {ClienteModel} from "../../cliente.model";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-listado-clientes',
   standalone: true,
-  imports: [],
+  imports: [
+    NgForOf
+  ],
   templateUrl: './listado-clientes.component.html',
   styleUrl: './listado-clientes.component.css'
 })
-export class ListadoClientesComponent {
+export class ListadoClientesComponent implements OnInit{
   constructor(protected clienteService: ClientesService) {
   }
   clientes : ClienteModel[] = []
 
   getCustomer(){
     this.clienteService.getClientes().subscribe(cleintes => this.clientes=cleintes)
+  }
+
+  ngOnInit(): void {
+    this.getCustomer()
   }
 }

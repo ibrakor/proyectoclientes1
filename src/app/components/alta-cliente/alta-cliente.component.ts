@@ -24,6 +24,9 @@ export class AltaClienteComponent {
     direccion: '',
     grupo: 0
   }
+  saveCustomer(){
+    this.clienteService.agregarCliente(this.nuevoCliente)
+  }
 
 
 }
