@@ -17,15 +17,19 @@ import {FormsModule} from "@angular/forms";
 export class AltaClienteComponent {
   constructor(protected clienteService: ClientesService) {
   }
-  nuevoCliente: ClienteModel = {
-    id: 0,
-    nombre: '',
-    cif: '',
-    direccion: '',
-    grupo: 0
-  }
+  nuevoCliente: ClienteModel = this.resetClient()
   saveCustomer(){
     this.clienteService.agregarCliente(this.nuevoCliente)
+    this.nuevoCliente = this.resetClient()
+  }
+  resetClient(){
+    return {
+      id: 0,
+      nombre: '',
+      cif: '',
+      direccion: '',
+      grupo: 0
+    };
   }
 
 

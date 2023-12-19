@@ -31,6 +31,7 @@ export class ClientesService {
   }
   agregarCliente(nuevoCliente: ClienteModel){
     this.clientes.push(nuevoCliente)
+
   }
   getGrupos(){
     return this.grupos

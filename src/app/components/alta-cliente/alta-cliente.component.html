@@ -1,16 +1,28 @@
-<div>
+<div class="container mt-4">
   <h2>Alta cliente</h2>
-  Nombre: <input id="nombre" [(ngModel)]="nuevoCliente.nombre">
-  <br>
-  CIF: <input id="cif" [(ngModel)]="nuevoCliente.cif">
-  <br>
-  Dirección: <input id="address" [(ngModel)]="nuevoCliente.direccion">
-  <br>
-  Grupo:
-  <select name="select" [(ngModel)]="nuevoCliente.grupo">
-    <option *ngFor="let grupo of clienteService.getGrupos()" [value]="grupo.id">{{grupo.nombre}}</option>
-  </select>
-  <br>
-  <button (click)="saveCustomer()">Guardar</button>
-</div>
 
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoCliente.nombre">
+    </div>
+
+    <div class="form-group">
+      <label for="cif">CIF:</label>
+      <input type="text" class="form-control" id="cif" [(ngModel)]="nuevoCliente.cif">
+    </div>
+
+    <div class="form-group">
+      <label for="address">Dirección:</label>
+      <input type="text" class="form-control" id="address" [(ngModel)]="nuevoCliente.direccion">
+    </div>
+
+    <div class="form-group">
+      <label for="grupo">Grupo:</label>
+      <select class="form-control" id="grupo" name="select" [(ngModel)]="nuevoCliente.grupo">
+        <option *ngFor="let grupo of clienteService.getGrupos()" [value]="grupo.id">{{ grupo.nombre }}</option>
+      </select>
+    </div>
+
+  <button type="button" class="btn btn-primary" (click)="saveCustomer()">Guardar</button>
+
+</div>

@@ -1,13 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {ClientesService} from "../../services/clientes.service";
 import {ClienteModel} from "../../cliente.model";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-listado-clientes',
   standalone: true,
   imports: [
-    NgForOf
+    NgForOf,
+    NgIf
   ],
   templateUrl: './listado-clientes.component.html',
   styleUrl: './listado-clientes.component.css'
