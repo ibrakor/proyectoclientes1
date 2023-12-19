@@ -1,0 +1,16 @@
+<div>
+  <h2>Alta cliente</h2>
+  Nombre: <input id="nombre" [(ngModel)]="nuevoCliente.nombre">
+  <br>
+  CIF: <input id="cif" [(ngModel)]="nuevoCliente.cif">
+  <br>
+  Dirección: <input id="address" [(ngModel)]="nuevoCliente.direccion">
+  <br>
+  Grupo:
+  <select name="select" [(ngModel)]="nuevoCliente.grupo">
+    <option *ngFor="let grupo of clienteService.getGrupos()" [value]="grupo.id">{{grupo.nombre}}</option>
+  </select>
+  <br>
+  <button >Guardar</button>
+</div>
+
